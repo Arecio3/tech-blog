@@ -1,4 +1,4 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 //Whats gonna gives us access to DB
 const sequelize = require('../config/connection');
 
@@ -6,28 +6,28 @@ class Blog extends Model { }
 
 Blog.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
+        // id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     primaryKey: true,
+        //     autoIncrement: true,
+        // },
         title: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         description: {
-            type: Datatypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false
         },
-        user_id: {
-            type: Datatypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'User',
-                key: 'id'
-            }     
-        },
+        // user_id: {
+        //     type: Datatypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'User',
+        //         key: 'id'
+        //     }     
+        // },
         created_at: {
             type: 'TIMESTAMP',
             defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
