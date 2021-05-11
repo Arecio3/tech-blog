@@ -13,10 +13,11 @@
     {{#if loggedIn}}
     <div id="comment">
         <h3>Comment</h3>
-        <input type="text">
-        <button type="submit">Submit</button>
+        <input type="text" id="commentInput"></input>
+        <button type="submit" id="submitBtn">Submit</button>
     </div>
     {{else}}
     <p>Please log in to comment</p>
     {{/if}}
 </div>
+<script src="/js/comment.js"></script>

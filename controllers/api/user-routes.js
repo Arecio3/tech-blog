@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// Create a new user 
 router.post('/', async (req, res) => {
     try {
       const dbUserData = await User.create({
@@ -19,7 +20,7 @@ router.post('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
-  
+  // Login
   router.post('/login', async (req, res) => {
     try {
       console.log(req.body)
@@ -58,7 +59,7 @@ router.post('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
-  
+  // logout
   router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
@@ -66,6 +67,25 @@ router.post('/', async (req, res) => {
       });
     } else {
       res.status(404).end();
+    }
+  });
+
+  // update comment
+  router.put('/update', async (req, res) => {
+    console.log('You have reached the fountain of youth')
+    try {
+      const comment = await Comment.create(
+        {
+          comment: req.body.comment,
+        },
+        {
+          where: {
+            post: req.session.post.id,
+          }
+        })
+        res.status(200).json(comment)
+    } catch (err) {
+      res.status(400).json(err);
     }
   });
   
