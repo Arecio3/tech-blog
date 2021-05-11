@@ -1,10 +1,11 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model { }
+class Comment extends Model {}
 
 Comment.init(
     {
+
         // id: {
         //     type: DataTypes.INTEGER,
         //     allowNull: false,
@@ -40,8 +41,10 @@ Comment.init(
         freezeTableName: true,
         timestamps: true,
         underscored: true,
-        modelName: 'Comment',  
+        modelName: 'comment',
     }
+
 )
 
 module.exports = Comment;
+

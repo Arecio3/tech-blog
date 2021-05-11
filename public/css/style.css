@@ -1,0 +1,20 @@
+body {
+    background-color: skyblue !important;
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.signUp-container {
+    background-color: bisque;
+    margin-right: 35%;
+    align-self: center;
+    border-radius: 0.2rem;
+}
+
+input {
+    display: flex;
+    flex: .5 .5 auto !important;
+}

@@ -1,3 +1,4 @@
+
 const { Model, DataTypes, Sequelize } = require('sequelize');
 //Whats gonna gives us access to DB
 const sequelize = require('../config/connection');
@@ -6,6 +7,7 @@ class Blog extends Model { }
 
 Blog.init(
     {
+
         // id: {
         //     type: DataTypes.INTEGER,
         //     allowNull: false,
@@ -33,13 +35,13 @@ Blog.init(
             defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
             allowNull: false
           },
+
     },
     {
         sequelize,
-        timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName:'Blog',   
+        modelName: 'blog',
     }
 );
 
