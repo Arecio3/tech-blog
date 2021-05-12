@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
   router.get('/blogpost/:id', async (req, res) => {
       try {
           const postData = await Blog.findByPk(req.params.id);
+          console.log("Hey dummy");
           console.log(postData);
           const onePost = postData.get({ plain: true });
           console.log({ onePost, loggedIn: req.session.loggedIn})
@@ -39,5 +40,21 @@ router.get('/', async (req, res) => {
     }
     res.render('login');
   });
+
+  // Add comment to blog
+  router.put('/update', async(req, res) => {
+      console.log('Fatality');
+      try {
+          console.log(req.body);
+          console.log('Caught a body');
+          const comment = await Comment.create({
+              ...req.body,
+              user_id: req.session.user_id
+          });
+          res.status(200).json(comment)
+      } catch (err) {
+          res.status(400).json
+      }
+  })
 
   module.exports = router;

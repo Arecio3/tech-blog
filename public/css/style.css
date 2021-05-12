@@ -5,6 +5,8 @@ body {
 nav a {
     text-decoration: none;
     margin-right: 5px;
+    display: flex;
+    
 }
 
 
