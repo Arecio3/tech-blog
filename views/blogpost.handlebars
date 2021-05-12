@@ -8,7 +8,10 @@
     </section>
 
     {{!-- Each comment for this post will be here in an each statement --}}
-
+    {{#each comments as |comment|}}
+    {{> comment}}
+    {{/each}}
+    
     {{#if loggedIn}}
     <div id="comment">
         <h3>Comment</h3>

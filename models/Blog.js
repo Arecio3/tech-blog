@@ -23,7 +23,7 @@ Blog.init(
             allowNull: false
         },
         // user_id: {
-        //     type: Datatypes.INTEGER,
+        //     type: DataTypes.INTEGER,
         //     allowNull: false,
         //     references: {
         //         model: 'User',

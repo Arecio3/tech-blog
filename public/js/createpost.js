@@ -7,12 +7,12 @@ const newPost = async (e) => {
     if (postTile && blogPost) {
         const response = await fetch('/newpost', {
             method: 'POST',
-            body: JSON.stringify({ postTile, blogPost }),
-            headers: { 'Content-type': 'application/json' }
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({ postTile, blogPost })
         });
         console.log('Please hit the route!!')
         if (response.ok) {
-            document.location.replace('/dashboard')
+            document.location.replace('/')
         } else {
             alert('Failed to post a blog')
         }

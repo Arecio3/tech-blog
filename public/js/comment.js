@@ -2,15 +2,17 @@ const comment = async (e) => {
     console.log("Clicky click button");
     e.preventDefault();
     const userComment = document.getElementById('commentInput').value;
-    const response = await fetch('/api/users/update', {
+    const response = await fetch('/newcomment', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            comment: userComment || ''
+            comment: userComment || '',
+            blog_id: document.getElementById("postId").dataset.value
         })
     });
     if (response.ok) {
         console.log("Congratulations, you did it!")
+        location.reload();
     } else {
         alert('Failed to post comment');
     }

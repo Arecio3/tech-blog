@@ -16,25 +16,25 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // blog_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'Blog',
-        //         key: 'id'
-        //     }
-        // },
+        blog_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Blog',
+                key: 'id'
+            }
+        },
         created_at: {
             type: 'TIMESTAMP',
             defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'User',
-        //         key: 'id',
-        //     }
-        // },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'User',
+                key: 'id',
+            }
+        },
     },
     {
         sequelize,
